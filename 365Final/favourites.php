@@ -1,7 +1,11 @@
 <?php
 if (session_status() == PHP_SESSION_NONE) {
 session_start();}
-include('database\config.php');
+$configs=include('database/config.php');
+$servername = $configs['host'];
+$username = $configs['username'];
+$password = $configs['password'];
+$dbname = $configs['dbname'];
 ?>
 <!DOCTYPE html>
 <html>

@@ -1,6 +1,11 @@
 <?php
 if (session_status() == PHP_SESSION_NONE) {
 session_start();}
+$configs=include('database/config.php');
+$servername = $configs['host'];
+$username = $configs['username'];
+$password = $configs['password'];
+$dbname = $configs['dbname'];
 ?>	
 <!DOCTYPE html>
 <html>
@@ -65,7 +70,6 @@ echo "
       <div class="w3-container w3-content w3-padding-64" style="max-width:1200px">
         <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
           <?php
-include('database\config.php');
 try {
 $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 // set the PDO error mode to exception

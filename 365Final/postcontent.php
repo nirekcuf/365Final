@@ -2,7 +2,11 @@
 //start php session for current user variables
 if (session_status() == PHP_SESSION_NONE) {
 session_start();
-include('database\config.php');
+$configs=include('database/config.php');
+$servername = $configs['host'];
+$username = $configs['username'];
+$password = $configs['password'];
+$dbname = $configs['dbname'];
 $post=$_POST["Text1"];
 try {
 $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);

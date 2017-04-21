@@ -2,7 +2,11 @@
 // Start the session
 if (session_status() == PHP_SESSION_NONE) {
 session_start();}
-include('database\config.php');
+$configs=include('database/config.php');
+$servername = $configs['host'];
+$username = $configs['username'];
+$password = $configs['password'];
+$dbname = $configs['dbname'];
 $temp=$_POST['Username'];
 $_SESSION["email"] = $temp;
 $temp=$_POST['password'];
@@ -10,7 +14,7 @@ $_SESSION["password"] =$temp;
 $_SESSION["first"] = null;
 $_SESSION["last"] = null;
 try {//todo: verify password case matches, start main session in here
-$conn = new PDO("mysql:host=$servername;dbname=$dbname", $dbusername, $password);
+$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 // set the PDO error mode to exception
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 // prepare sql and bind parameters

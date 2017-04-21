@@ -2,7 +2,11 @@
 if (session_status() == PHP_SESSION_NONE) {
 session_start();}
 $vistitorID;
-include('database\config.php');
+$configs=include('database/config.php');
+$servername = $configs['host'];
+$username = $configs['username'];
+$password = $configs['password'];
+$dbname = $configs['dbname'];
 $blog = $_GET['blog'];
 $_SESSION["blog"]=$blog;
 try {

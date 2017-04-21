@@ -1,5 +1,9 @@
 <?php
-include('database\config.php');
+$configs=include('database/config.php');
+$servername = $configs['host'];
+$username = $configs['username'];
+$password = $configs['password'];
+$dbname = $configs['dbname'];
 $PASS= $_POST["password"];  
 $VPASS= $_POST["vpassword"]; 
 if ($VPASS==$PASS){

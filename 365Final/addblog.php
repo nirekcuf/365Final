@@ -2,7 +2,11 @@
 if (session_status() == PHP_SESSION_NONE) {
 session_start();
 }
-include('database\config.php');
+$configs=include('database/config.php');
+$servername = $configs['host'];
+$username = $configs['username'];
+$password = $configs['password'];
+$dbname = $configs['dbname'];
 $temp=$_POST['BlogName'];
 $BlogName=$temp;
 $temp=$_POST['catagory'];
