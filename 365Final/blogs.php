@@ -118,6 +118,8 @@ $conn = null;
             </fieldset>
             <fieldset class="selecter">
               <select id="slct"class="selecter" name="catagory" tabindex="2" required>
+                <option disabled selected value="">Select Category
+                </option>
                 <option value="events">Events
                 </option>
                 <option value="purpose">Purpose
@@ -153,7 +155,7 @@ $conn = null;
                 <option value="other">Other
                 </option>
               </select> 
-              <label for="slct">Choose category, TODO: change categorys and css label,  show blogs content, delete blog posts, escape keys for mysql(error with certain characters)
+              <label for="slct">TODO: change categorys and escape keys for mysql(error with certain characters)
               </label>
             </fieldset>
             <fieldset>
