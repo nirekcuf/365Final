@@ -91,12 +91,17 @@ echo " <h2 class='w3-wide w3-center'><span class='ColText'>BLOGS YOU ARE FOLLOWI
 foreach ($result as $rows) 
 {
 echo "
-<a href="."pulledcontent.php?blog=".$rows['blog_id']."  > <div class='w3-card-4 w3-third w3-shadow w3-animate-zoom ' style='max-width:30%;margin:10px;'>
+<div class='w3-card-4 w3-third w3-shadow w3-animate-zoom ' style='max-width:30%;margin:10px;'>
+
+<a style='position:absolute; ' href='unfav.php?blog=".$rows['blog_id']."'  > &#10006</a>
+<a href="."pulledcontent.php?blog=".$rows['blog_id']."  > <div >
+
 <img style='max-width:100%;' src='images/yarn.jpeg' alt='Yarn'>
 <div class='w3-container w3-center w3-white'>
 <p style='margin:0px;'><hr style='margin:0px;'></p>
 <p style='margin:0px;'>Blog #".$rows['blog_id']."<hr style='margin:0px;'></p>
-</div></div></a>"; }
+</div></div></a>
+</div>"; }
 }  elseif(!$result) {
 echo " <h2 class='w3-wide w3-center'><span class='ColText'>YOU DON'T HAVE ANY FAVORITES</span></h2>";
 echo " <h4 class='w3-wide w3-center'><span class='ColText'>START SEARCHING</span></h4>";
