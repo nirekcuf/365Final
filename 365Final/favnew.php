@@ -95,8 +95,7 @@ echo "
 <img style='max-width:100%;' src='images/yarn.jpeg' alt='Yarn'>
 <div class='w3-container w3-center w3-white'>
 <p style='margin:0px;'>".$rows['blog_name']."<hr style='margin:0px;'></p>
-<p style='margin:0px;'>Unique ID: ".$rows['blog_id']."<hr style='margin:0px;'></p>
-</div><div  class='w3-white'><span style='padding-left:5em;'><a href='followblog.php?blog=".$rows['blog_id']."' style='color:#ff6600;'>favourite &#10004</a></span>
+</div><div  class='w3-white'><span style='padding-left:5em;'><a href='followblog.php?blog=".$rows['blog_id']."' style='color:#a60070;'>favourite &#10004</a></span>
 </div></div></a>"; }
 }  elseif(!$result) {
 echo " <h2 class='w3-wide w3-center'><span class='ColText'>WE DIDN'T FIND ANY RESULTS</span></h2>";

@@ -46,7 +46,7 @@ $result = $stmt->fetchall();
         <?php
 echo "
 <li class='dropdown'>
-<a href='homepage.php' style='color:white;' class='w3-button w3-padding-large w3-hide-small'>Welcome ".$_SESSION['firstname']."</a>
+<a href='homepage.php' style='color:white;' class='w3-button w3-padding-large w3-hide-small'>Home</a>
 <div class='dropdown-content'>
 <a href='signout.php'>Sign-out</a>
 </div>
@@ -97,21 +97,21 @@ if ($result){
 $i=0;
 foreach ($result as $rows) 
 {
-echo " <div class='w3-card-4 w3-margin'>
-<header class='w3-container '>
+echo " <div class='w3-card-4 w3-margin  '>
+<header class='w3-container w3-pink '>
 <h1 class='ColText'> </h1>
 </header>
 <div class='w3-container w3-white'>
 <p>".$rows["post"]."</p>
-<span id='unhide' style='padding-left:5em; display:none; ' >
-<a  href='deletepost.php?post=".$rows['num']."' style='color:red;'>remove &#10006</a></span>
+<span class='unhide' style='padding-left:5em; display:none; ' >
+<a  href='deletepost.php?post=".$rows['num']."' style='color:#ce3175;'>remove &#10006</a></span>
 </div>
 </div>";
 }
 }  elseif(!$result) {
 echo "
 <div class='w3-card-4'>
-<header class='w3-container '>
+<header class='w3-container  w3-pink '>
 <h1 class='ColText'> </h1>
 </header>
 <div class='w3-container w3-white'>
@@ -145,18 +145,22 @@ $conn = null;
 if($vistitorID==$_SESSION['email']){
 ?>
   <script type="text/javascript">
-    document.getElementById("unhide").style.display = "inline";
+    var list = document.getElementsByClassName("unhide");
+	for(var i=0; i<list.length; i++) { 
+  list[i].style.display='inline';
+}
   </script>
   <form id="contact" action="postcontent.php" method="post" class="container" style="display:block;max-width:20%;">
-    <textarea name="Text1" placeholder="Talk About Something" cols="40" rows="50">
-    </textarea>
+    <textarea name="Text1" placeholder="Talk About Something" cols="40" rows="50"></textarea>
     <br/>
     <fieldset>
       <button name="subButton" value="Add Topic" type="submit" id="contact-submit" >Submit Post
       </button>
     </fieldset>
   </form>
-  <?PHP } ?>
+  <?PHP 
+}
+  ?>
   </body>
 <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
   <p class="w3-medium">

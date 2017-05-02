@@ -68,7 +68,54 @@ echo "
     <!-- The Tour Section -->
     <div class="ColorNav" id="tour">
       <div class="w3-container w3-content w3-padding-64" style="max-width:1200px">
-        <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+	  <label class="ColText w3-right w3-padding w3-margin" id="lbl" style="font-weight:bold;">New Blog
+            <button  class="w3-button w3-circle w3-purple" id="btnaddtopic" onclick="func(0)">+
+            </button>
+          </label>
+		  <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+		
+		   <div class="container">  
+          <form id="contact" action="addblog.php" method="post" style="display:none;">
+            <fieldset>
+              <input placeholder="Enter Blog Title" type="text" name="BlogName" tabindex="1" required>
+            </fieldset>
+            <fieldset class="selecter">
+              <select id="slct"class="selecter" name="catagory" tabindex="2" required>
+                <option disabled selected value="">Select Category
+                </option>
+                <option value="Extreme Spinning">Extreme Spinning
+                </option>
+                <option value="Crochet">Crochet
+                </option>
+				<option value="Extreme Crochetting">Extreme Crochetting
+                </option>
+                <option value="Left Plaited">Left Plaited
+                </option>
+                <option value="Right Plaited">Right Plaited
+                </option>
+				<option value="Yarn">Yarn
+                </option>
+                <option value="Knitting in Public">Knitting in Public
+                </option>
+                <option value="Knitting in Private">Knitting in Private
+                </option>
+                <option value="Personal Knitting">Personal Knitting
+                </option>
+                <option value="Yarn Crawl">Yarn Crawling
+                </option>
+                <option value="General Knitting">General Knitting
+                </option>
+                <option value="Other">Other
+                </option>
+              </select> 
+              </fieldset>
+            <fieldset>
+              <button name="subButton" value="Add Topic" type="submit" id="contact-submit"  data-submit="...Sending">Submit
+              </button>
+            </fieldset>
+          </form>
+        </div>
+        
           <?php
 try {
 $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -83,15 +130,17 @@ $asdf;
 if ($result){
 $i=0;
 echo " <h2 class='w3-wide w3-center'><span class='ColText'>YOUR BLOGS</span></h2>";
+
 foreach ($result as $rows) 
 {
 // these are the boxes displayed on the leading page
 echo "
-<a href="."pulledcontent.php?blog=".$rows['blog_id']."  > <div class='w3-card-4 w3-third w3-shadow w3-animate-zoom ' style='max-width:30%;margin:10px;'>
+<div class='w3-card-4 w3-third w3-shadow w3-animate-zoom ' style='max-width:30%;margin:10px;'>
+<a style='position:absolute; ' href='deleteblog.php?classID=".$rows['blog_id']."'  > &#10006</a>
+<a href="."pulledcontent.php?blog=".$rows['blog_id']."  > 
 <img style='max-width:100%;' src='images/yarn.jpeg' alt='Norway'>
-<div class='w3-container w3-center w3-white'>
-<p style='margin:0px;'>".$rows['blog_name']."<hr style='margin:0px;'></p>
-</div><div  class='w3-white'><span style='padding-left:5em;'   ><a href='deleteblog.php?classID=".$rows['blog_id']."' style='color:red;'>remove &#10006</a></span>
+<div class='w3-container w3-center w3-white' >
+<p style='margin:5px;'>".$rows['blog_name']."<hr style='margin:0px;'></p>
 </div></div></a>";
 }
 //display nicely if no results exist
@@ -106,64 +155,10 @@ echo "<br>" . $e->getMessage();
 }
 $conn = null;
 ?>
-          <label class="ColText w3-right w3-padding w3-margin" id="lbl" style="font-weight:bold;">New Blog
-            <button  class="w3-button w3-circle w3-purple" id="btnaddtopic" onclick="func(0)">+
-            </button>
-          </label>
+          
         </div>
-        <div class="container">  
-          <form id="contact" action="addblog.php" method="post" style="display:none;">
-            <fieldset>
-              <input placeholder="Enter Blog Title" type="text" name="BlogName" tabindex="1" required>
-            </fieldset>
-            <fieldset class="selecter">
-              <select id="slct"class="selecter" name="catagory" tabindex="2" required>
-                <option disabled selected value="">Select Category
-                </option>
-                <option value="events">Events
-                </option>
-                <option value="purpose">Purpose
-                </option>
-                <option value="faith">Faith
-                </option>
-                <option value="music">Music
-                </option>
-                <option value="relationships">Relationships
-                </option>
-                <option value="life">Life
-                </option>
-                <option value="fitness">Fitness
-                </option>
-                <option value="education">Education
-                </option>
-                <option value="technology">Technology
-                </option>
-                <option value="travel">Travel
-                </option>
-                <option value="business">Business
-                </option>
-                <option value="sports">Sports
-                </option>
-                <option value="parenting">Parenting
-                </option>
-                <option value="fashion">Fashion
-                </option>
-                <option value="books">Books
-                </option>
-                <option value="inspiration">Inspiration
-                </option>
-                <option value="other">Other
-                </option>
-              </select> 
-              <label for="slct">TODO: change categorys and escape keys for mysql(error with certain characters)
-              </label>
-            </fieldset>
-            <fieldset>
-              <button name="subButton" value="Add Topic" type="submit" id="contact-submit"  data-submit="...Sending">Submit
-              </button>
-            </fieldset>
-          </form>
-        </div>
+		
+       
         <p class="w3-justify">
           <span class="ColText"> 
             </p>
