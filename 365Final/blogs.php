@@ -10,7 +10,7 @@ $dbname = $configs['dbname'];
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Yarn Baller
+    <title>Yarn Ballers
     </title>
     <meta charset="UTF-8">
     <link href="./images/icon.png" type="image/png" rel="shortcut icon" />
@@ -54,7 +54,7 @@ echo "
     <div class="w3-content" style="max-width:2000px;margin-top:46px">
       <!-- The Main Section -->
       <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="Main">
-        <h2 class="w3-wide">Daily Hooker
+        <h2 class="w3-wide">Yarn Ballers
         </h2>
         <p class="w3-opacity">
           <i>Knit with others
