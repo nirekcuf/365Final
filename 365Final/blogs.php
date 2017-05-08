@@ -10,7 +10,7 @@ $dbname = $configs['dbname'];
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Daily Hooker
+    <title>Yarn Baller
     </title>
     <meta charset="UTF-8">
     <link href="./images/icon.png" type="image/png" rel="shortcut icon" />

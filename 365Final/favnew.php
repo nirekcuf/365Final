@@ -11,7 +11,7 @@ $dbname = $configs['dbname'];
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Daily Hooker
+    <title>Yarn Baller
     </title>
     <meta charset="UTF-8">
     <link href="./images/icon.png" type="image/png" rel="shortcut icon" />
@@ -73,7 +73,6 @@ $strlen = strlen( $search );
 for( $i = 0; $i <= $strlen; $i++ ) {
 if($i%2==0){   $newsearch = $newsearch.substr( $search, $i, 1 )."%%";}
 else{$newsearch = $newsearch."%";}
-// $char contains the current character, so do your processing here
 }
 $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 // set the PDO error mode to exception
